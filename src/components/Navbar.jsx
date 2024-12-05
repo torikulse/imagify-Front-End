@@ -1,9 +1,8 @@
 import { useState } from "react";
 import { assets } from "../assets/assets";
+import { Link } from "react-router-dom";
 
-export default function Navbar() {
-  const [isLogin, setIslogin] = useState(false);
-
+export default function Navbar({ isLogin, setIslogin }) {
   const handleIslogin = () => {
     setIslogin(true);
   };
@@ -35,14 +34,15 @@ export default function Navbar() {
                 alt="profile icon"
                 onClick={handleTogglelogout}
               />
-              <button
+              <Link
+                to={"/"}
                 onClick={handleLogout}
                 className={`${
                   togglelogout ? "" : "hidden"
                 } py-2 px-4 rounded-full shadow bg-white absolute w-24 right-0 top-16  active:border-red-200 border  `}
               >
                 Log Out
-              </button>
+              </Link>
             </div>
           </div>
         ) : (
@@ -50,12 +50,13 @@ export default function Navbar() {
             <button className="p-2 cursor-pointer text-neutral-600 hover:underline">
               Pricing
             </button>
-            <button
+            <Link
+              to={"/result"}
               className="py-2.5 px-14 bg-black text-white rounded-full"
               onClick={handleIslogin}
             >
               Login
-            </button>
+            </Link>
           </div>
         )}
       </div>
