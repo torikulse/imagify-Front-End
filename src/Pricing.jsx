@@ -2,9 +2,9 @@ import { assets, plans } from "./assets/assets";
 
 export default function Pricing() {
   return (
-    <main className="flex-grow py-24">
+    <main className="flex-grow bg-teal-50 py-24">
       <div className="text-center">
-        <button className="rounded-full border px-9 py-2 text-neutral-600">
+        <button className="rounded-full border border-neutral-300 bg-slate-50 px-9 py-2 text-neutral-600">
           OUR PLANS
         </button>
       </div>
@@ -16,7 +16,7 @@ export default function Pricing() {
           return (
             <div
               key={i}
-              className="w-[333px] rounded-lg border px-12 pb-11 pt-16"
+              className="w-[333px] rounded-lg border bg-white px-12 pb-11 pt-16"
             >
               <img src={assets.logo_icon} alt="" />
               <h1 className="mt-5 text-xl font-medium text-neutral-600">

@@ -3,8 +3,8 @@ import { Route, Routes } from "react-router-dom";
 import Home from "./Home";
 import Result from "./Result";
 import Footer from "./components/Footer";
-import { useState } from "react";
 import Pricing from "./Pricing";
+import { useState } from "react";
 
 export default function Layout() {
   const [isLogin, setIslogin] = useState(false);
@@ -16,7 +16,7 @@ export default function Layout() {
         <Route path="/result" element={<Result />} />
         <Route path="/pricing" element={<Pricing />} />
       </Routes>
-      {!isLogin && <Footer />}
+      <Footer />
     </div>
   );
 }
