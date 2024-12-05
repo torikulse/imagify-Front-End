@@ -10,12 +10,10 @@ export default function Layout() {
   return (
     <div className="min-h-screen flex flex-col">
       <Navbar isLogin={isLogin} setIslogin={setIslogin} />
-      <main className="flex-grow">
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/result" element={<Result />} />
-        </Routes>
-      </main>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/result" element={<Result />} />
+      </Routes>
       {!isLogin && <Footer />}
     </div>
   );
