@@ -9,7 +9,7 @@ import Pricing from "./Pricing";
 export default function Layout() {
   const [isLogin, setIslogin] = useState(false);
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="flex min-h-screen flex-col">
       <Navbar isLogin={isLogin} setIslogin={setIslogin} />
       <Routes>
         <Route path="/" element={<Home />} />

@@ -1,29 +1,33 @@
+import { Link } from "react-router-dom";
 import { assets, stepsData, testimonialsData } from "./assets/assets";
 
 export default function Home() {
   return (
     <main className="flex-grow bg-gradient-to-b from-teal-50 to-white">
-      <div className="pt-12 ">
+      <div className="pt-12">
         <section className="py-10">
-          <div className="px-8 py-3 flex items-center gap-2 rounded-full bg-white border-[0.3px] w-max border-neutral-500 mx-auto">
+          <div className="mx-auto flex w-max items-center gap-2 rounded-full border-[0.3px] border-neutral-500 bg-white px-8 py-3">
             <p className="text-neutral-600">Best text to image generator</p>
             <img src={assets.star_icon} alt="star icon" />
           </div>
-          <p className="text-[80px] w-[660px] mx-auto text-center leading-none mt-10">
+          <p className="mx-auto mt-10 w-[660px] text-center text-[80px] leading-none">
             Turn text to <span className="text-blue-500">image</span>, in
             seconds.
           </p>
-          <p className="w-[576px] text-center mx-auto mt-5 text-neutral-600 text-lg">
+          <p className="mx-auto mt-5 w-[576px] text-center text-lg text-neutral-600">
             Unleash your creativity with AI. Turn your imagination into visual
             art in seconds – just type, and watch the magic happen.
           </p>
-          <button className="flex bg-black items-center gap-2 py-4 px-8 rounded-full mx-auto mt-9">
+          <Link
+            to={"/result"}
+            className="mx-auto mt-9 flex w-fit items-center gap-2 rounded-full bg-black px-8 py-4"
+          >
             <span className="text-white">Generate Images</span>
             <img className="w-8" src={assets.star_group} alt="star" />
-          </button>
+          </Link>
         </section>
         <section className="py-10">
-          <div className="flex gap-4 justify-center ">
+          <div className="flex justify-center gap-4">
             <img
               src={assets.sample_img_1}
               className="w-20 rounded-lg"
@@ -45,21 +49,21 @@ export default function Home() {
               alt="sample image"
             />
           </div>
-          <p className="text-neutral-600 py-2 text-center">
+          <p className="py-2 text-center text-neutral-600">
             Generated images from imagify
           </p>
         </section>
         <section className="py-14">
-          <h1 className="text-center font-medium text-[40px]">How it works</h1>
-          <p className="text-center text-neutral-600 mb-9">
+          <h1 className="text-center text-[40px] font-medium">How it works</h1>
+          <p className="mb-9 text-center text-neutral-600">
             Transform Words Into Stunning Images
           </p>
-          <div className="max-w-[800px] mx-auto flex flex-col gap-5">
+          <div className="mx-auto flex max-w-[800px] flex-col gap-5">
             {stepsData.map((e, i) => {
               return (
                 <div
                   key={i}
-                  className="flex gap-4 p-6 rounded-md bg-white/20 shadow border"
+                  className="flex gap-4 rounded-md border bg-white/20 p-6 shadow"
                 >
                   <img src={e.icon} alt="icon" />
                   <div>
@@ -72,16 +76,16 @@ export default function Home() {
           </div>
         </section>
         <section className="py-14">
-          <h1 className="text-[40px] font-medium text-center">
+          <h1 className="text-center text-[40px] font-medium">
             Create AI Images
           </h1>
           <p className="text-center text-neutral-600">
             Turn your imagination into visuals
           </p>
-          <div className="max-w-[990px] flex gap-10 mx-auto items-center mt-16">
+          <div className="mx-auto mt-16 flex max-w-[990px] items-center gap-10">
             <img className="max-w-96" src={assets.sample_img_1} alt="" />
             <div>
-              <h1 className="font-medium text-[28px]">
+              <h1 className="text-[28px] font-medium">
                 Introducing the AI-Powered Text to Image Generator
               </h1>
               <p className="mt-4 text-neutral-600">
@@ -102,49 +106,52 @@ export default function Home() {
           </div>
         </section>
         <section className="py-14">
-          <h1 className="text-[40px] font-medium text-center">
+          <h1 className="text-center text-[40px] font-medium">
             Customer testimonials
           </h1>
-          <p className="text-neutral-600 text-center">
+          <p className="text-center text-neutral-600">
             What Our Users Are Saying
           </p>
-          <div className="flex gap-7 mt-10 justify-center">
+          <div className="mt-10 flex justify-center gap-7">
             {testimonialsData.map((e, i) => {
               return (
                 <div
                   key={i}
-                  className="w-[322px] border bg-white/20 py-8 px-6 text-center"
+                  className="w-[322px] border bg-white/20 px-6 py-8 text-center"
                 >
                   <img className="mx-auto" src={e.image} alt="" />
                   <div className="mt-4">
                     <h1 className="text-lg font-medium text-zinc-700">
                       {e.name}
                     </h1>
-                    <p className="mt-1 text-sm text-zinc-500 font-medium">
+                    <p className="mt-1 text-sm font-medium text-zinc-500">
                       {e.role}
                     </p>
                   </div>
-                  <div className="flex gap-1 mx-auto w-fit mt-3">
+                  <div className="mx-auto mt-3 flex w-fit gap-1">
                     {Array(e.stars)
                       .fill(null)
                       .map((_, index) => (
                         <img key={index} src={assets.rating_star} alt="" />
                       ))}
                   </div>
-                  <p className="text-neutral-600 mt-5">{e.text}</p>
+                  <p className="mt-5 text-neutral-600">{e.text}</p>
                 </div>
               );
             })}
           </div>
         </section>
         <section className="py-14">
-          <h1 className="text-[40px] font-medium text-center">
+          <h1 className="text-center text-[40px] font-medium">
             See the magic. Try now
           </h1>
-          <button className="flex bg-black items-center gap-2 py-4 px-8 rounded-full mx-auto mt-9">
+          <Link
+            to={"/result"}
+            className="mx-auto mt-9 flex w-fit items-center gap-2 rounded-full bg-black px-8 py-4"
+          >
             <span className="text-white">Generate Images</span>
             <img className="w-8" src={assets.star_group} alt="star" />
-          </button>
+          </Link>
         </section>
       </div>
     </main>

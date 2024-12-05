@@ -2,23 +2,23 @@ import { assets } from "./assets/assets";
 
 export default function Result() {
   return (
-    <main className="flex-grow flex justify-center bg-teal-50">
-      <div className="mt-auto  py-14">
+    <main className="flex flex-grow justify-center bg-teal-50">
+      <div className="mt-auto py-14">
         <div className="mx-auto w-fit">
           <img
-            className="border-b-4 border-blue-600 w-80 "
+            className="w-80 border-b-4 border-blue-600"
             src={assets.sample_img_1}
             alt=""
           />
           <span className="text-sm text-neutral-600">Loading...</span>
         </div>
-        <div className="bg-neutral-600 rounded-full ps-8 py-1 pe-1 flex gap-2 w-fit mx-auto mt-6 items-center">
+        <div className="mx-auto mt-6 flex w-fit items-center gap-2 rounded-full bg-neutral-600 py-1 pe-1 ps-8">
           <input
-            className="bg-transparent focus:outline-none text-white w-80 placeholder:text-white text-sm"
+            className="w-80 bg-transparent text-sm text-white placeholder:text-white focus:outline-none"
             type="text"
             placeholder="Describe what you want to generate"
           />
-          <button className="py-2.5 px-14 bg-black text-white rounded-full">
+          <button className="rounded-full bg-black px-14 py-2.5 text-white">
             Generate
           </button>
         </div>
