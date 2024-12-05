@@ -18,9 +18,9 @@ export default function Navbar({ isLogin, setIslogin }) {
   return (
     <div className="bg-teal-50">
       <div className="container mx-auto px-4 flex justify-between items-center py-2">
-        <div>
+        <Link to={"/"}>
           <img className=" hover:cursor-pointer" src={assets.logo} alt="Logo" />
-        </div>
+        </Link>
         {isLogin ? (
           <div className="flex gap-2.5 items-center">
             <button className="py-4 px-10 bg-blue-100 text-neutral-600 rounded-full flex gap-2 items-center">
@@ -47,9 +47,9 @@ export default function Navbar({ isLogin, setIslogin }) {
           </div>
         ) : (
           <div className="flex gap-2.5 items-center">
-            <button className="p-2 cursor-pointer text-neutral-600 hover:underline">
+            <Link to={"/pricing"} className="p-2 cursor-pointer text-neutral-600 hover:underline">
               Pricing
-            </button>
+            </Link>
             <Link
               to={"/result"}
               className="py-2.5 px-14 bg-black text-white rounded-full"
